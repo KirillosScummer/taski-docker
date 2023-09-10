@@ -16,13 +16,13 @@ services:
     image: sawerthesame/taski_backend
     env_file: .env
     volumes:
-      - static_volume:/backend_static
+      - static_volume:/static
   frontend:
     image: sawerthesame/taski_frontend  # Качаем с Docker Hub
     env_file: .env
-    command: cp -r /app/build/. /frontend_static/
+    command: cp -r /app/build/. /static/
     volumes:
-      - static_volume:/frontend_static
+      - static_volume:/static
   gateway:
     image: sawerthesame/taski_gateway  # Качаем с Docker Hub
     env_file: .env
